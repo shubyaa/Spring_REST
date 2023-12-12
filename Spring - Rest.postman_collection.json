@@ -1,0 +1,89 @@
+{
+	"info": {
+		"_postman_id": "b3dd2e11-ef6f-49f6-b4b8-c5a95f90f02b",
+		"name": "Spring - Rest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "15986137"
+	},
+	"item": [
+		{
+			"name": "Test Endpoint",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8081/"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Records",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8081/getAll"
+			},
+			"response": []
+		},
+		{
+			"name": "Add Record",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Rakshit is working\",\n    \"description\": \"Rakshit is working really hard to get to the point.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8081/add"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Record",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8081/delete/300"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Most Recent Entries",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/getMostRecentEntries?limit=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"getMostRecentEntries"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

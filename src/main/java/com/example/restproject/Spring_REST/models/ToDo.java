@@ -6,9 +6,11 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+import java.time.LocalDateTime;
+
 
 @Entity
-public class ToDo {
+public class ToDo implements Comparable<ToDo> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -30,7 +32,7 @@ public class ToDo {
 
     }
 
-    public boolean checkIsObjectNull(){
+    public boolean checkIsObjectNull() {
         return getDatetime() == null || getDescription() == null || getTitle() == null;
     }
 
@@ -67,4 +69,8 @@ public class ToDo {
     }
 
 
+    @Override
+    public int compareTo(ToDo o) {
+        return LocalDateTime.parse(o.getDatetime()).compareTo(LocalDateTime.parse(datetime));
+    }
 }
